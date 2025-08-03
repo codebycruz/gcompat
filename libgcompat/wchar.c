@@ -165,3 +165,14 @@ wchar_t *__wcscat_chk(wchar_t *dest, const wchar_t *src, size_t n)
 	*dest++ = 0;
 	return a;
 }
+
+wchar_t *__wmemcpy_chk(wchar_t *dest, const wchar_t *src, size_t n,
+                       size_t destlen)
+{
+	assert(dest != NULL);
+	assert(src != NULL);
+
+	assert(destlen >= n);
+
+	return wmemcpy(dest, src, n);
+}
