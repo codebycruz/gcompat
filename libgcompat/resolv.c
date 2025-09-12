@@ -8,6 +8,7 @@
 
 #include <resolv.h> /* res_state */
 #include <stddef.h> /* NULL */
+#include <stdlib.h> /* malloc, free */
 #include <string.h> /* memcpy, memset */
 
 #include "alias.h" /* weak_alias */
