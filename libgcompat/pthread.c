@@ -96,3 +96,12 @@ int pthread_mutexattr_setkind_np(pthread_mutexattr_t *attr, int kind)
 
 	return pthread_mutexattr_settype(attr, kind);
 }
+
+/**
+ * Internal glibc function probed via a weak symbol in libstdc++
+ * on glibc <2.34 to determine if threads are used.
+ */
+int __pthread_key_create(pthread_key_t *key, void (*destructor)(void *))
+{
+	return pthread_key_create(key, destructor);
+}
