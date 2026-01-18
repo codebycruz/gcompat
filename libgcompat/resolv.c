@@ -76,3 +76,8 @@ int __res_nquery(res_state statep, const char *dname, int class, int type,
 	return rc;
 }
 weak_alias(__res_nquery, res_nquery);
+
+int __res_init(void)
+{
+	return res_init();
+}
